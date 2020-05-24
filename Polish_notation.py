@@ -1,0 +1,30 @@
+def polish_notation(operator, operand1, operand2):
+    """
+    Принимает выражение в Польской нотации для двух положительных чисел
+    """
+    assert operator in ['+', '-', '*', '/'], 'Вы ввели неверную операцию'
+    try:
+        if float(operand1) > 0 and float(operand2) > 0:
+            if operator == '+':
+                return float(operand1) + float(operand2)
+            elif operator == '-':
+                return float(operand1) - float(operand2)
+            elif operator == '*':
+                return float(operand1) * float(operand2)
+            elif operator == '/':
+                return float(operand1) / float(operand2)
+    except ValueError:
+        return 'Вы ввели строку вместо числа.'
+    else:
+        return ('Введите положительные числа.')
+
+
+prefix_notation = input('Введите выражение в Польской нотации: ').split()
+
+try:
+    polish_notation(*prefix_notation)
+except TypeError:
+    print('Введено недопустимое количество аргументов. '
+          'Введите оператор и два операнда через пробел.')
+else:
+    print(polish_notation(*prefix_notation))
