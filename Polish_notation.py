@@ -13,18 +13,18 @@ def polish_notation(operator, operand1, operand2):
                 return float(operand1) * float(operand2)
             elif operator == '/':
                 return float(operand1) / float(operand2)
+        else:
+            return 'Введите положительные числа.'
     except ValueError:
         return 'Вы ввели строку вместо числа.'
-    else:
-        return ('Введите положительные числа.')
 
 
 prefix_notation = input('Введите выражение в Польской нотации: ').split()
 
 try:
-    polish_notation(*prefix_notation)
+    result = polish_notation(*prefix_notation)
 except TypeError:
     print('Введено недопустимое количество аргументов. '
           'Введите оператор и два операнда через пробел.')
 else:
-    print(polish_notation(*prefix_notation))
+    print(result)
