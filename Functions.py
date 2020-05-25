@@ -51,7 +51,8 @@ def print_list(doc_list):
         else:
             print(line['type'], '-', line['number'], '-', line['name'])
 
-def print_name(doc_list): # Новая функция для ДЗ
+
+def print_name(doc_list):
     """
     Выведет имена всех владельцев документов
     """
@@ -63,6 +64,7 @@ def print_name(doc_list): # Новая функция для ДЗ
                   'отсутствует присвоенное имя владельца.')
         else:
             print(line['name'])
+
 
 def add_doc(doc_list, direct_dict):
     """
@@ -174,7 +176,7 @@ def databank():
             get_shelf_by_number(directories)
         elif choice == 'pl':
             print_list(documents)
-        elif choice == 'pn': # Новая функция для ДЗ
+        elif choice == 'pn':
             print_name(documents)
         elif choice == 'ad':
             add_doc(documents, directories)
@@ -189,5 +191,6 @@ def databank():
             break
         else:
             print('Введены неверные данные. Введите первые буквы команды на литиннице.')
+
 
 databank()
